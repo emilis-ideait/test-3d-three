@@ -9,7 +9,7 @@ import { OrbitControls } from '@react-three/drei';
 
 function Duck() {
 
-    const gltf = useLoader(GLTFLoader, '/duck.glb' );
+    const gltf = useLoader(GLTFLoader, './duck.glb' );
     return <primitive object={gltf.scene} />
 }
 
