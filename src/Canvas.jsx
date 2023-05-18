@@ -19,15 +19,22 @@ function Box(props) {
     // Hold state for hovered and clicked events
     const [hovered, hover] = useState(false)
     const [clicked, click] = useState(false)
+
+    const onClick = evt => {
+        evt.stopPropagation();
+        click( ! clicked );
+    };
+
     // Subscribe this component to the render-loop, rotate the mesh every frame
     useFrame((state, delta) => (ref.current.rotation.x += delta))
+
     // Return the view, these are regular Threejs elements expressed in JSX
     return (
         <mesh
             {...props}
             ref={ref}
             scale={clicked ? 1.5 : 1}
-            onClick={(event) => click(!clicked)}
+            onClick={ onClick }
             onPointerOver={(event) => hover(true)}
             onPointerOut={(event) => hover(false)}>
             <boxGeometry args={[1, 1, 1]} />
