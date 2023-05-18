@@ -23,6 +23,7 @@ function Box(props) {
     const onClick = evt => {
         evt.stopPropagation();
         click( ! clicked );
+        console.log( 'clicked box' );
     };
 
     // Subscribe this component to the render-loop, rotate the mesh every frame
