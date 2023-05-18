@@ -45,7 +45,7 @@ function Box(props) {
 
 export default function TestCanvas() {
     return (
-        <Canvas orthographic>
+        <Canvas>
             <OrbitControls />
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
